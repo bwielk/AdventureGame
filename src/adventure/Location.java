@@ -1,3 +1,4 @@
+package adventure;
 import java.util.*;
 
 public class Location {
@@ -32,5 +33,4 @@ public class Location {
 			return true;
 		}
 	}
-	
 }
