@@ -50,6 +50,18 @@ public class Main {
 			System.out.println();
 			
 			String direction = scanner.nextLine().toUpperCase();
+			HashMap<String, String> directions = new HashMap<String, String>();
+			directions.put("NORTH", "N");
+			directions.put("EAST", "E");
+			directions.put("SOUTH", "S");
+			directions.put("WEST", "W");
+			
+			String[] directionPhrase = direction.split(" ");
+			for(String word : directionPhrase){
+					if(directions.containsKey(word)){
+						direction = directions.get(word);
+					}
+			}
 			if(exits.containsKey(direction)){
 				loc = exits.get(direction);
 			}else{
