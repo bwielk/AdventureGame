@@ -17,7 +17,7 @@ public class Main {
 		tempExit.put("N", 3);
 		tempExit.put("E", 4);
 		tempExit.put("S", 5);
-		locations.put(1, new Location(1, "Sunny and dry desert", tempExit));
+		locations.put(1, new Location(1, "Sunny and dry desert", null));
 		//GRAVEYARD
 		tempExit = new HashMap<String, Integer>();
 		tempExit.put("N", 3);

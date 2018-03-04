@@ -15,7 +15,7 @@ public class Location {
 		}else{
 			this.exits = new HashMap<String, Integer>();
 		}
-		exits.put("Q", 0);
+		this.exits.put("Q", 0);
 	} 
 
 	public int getLocationID() {
