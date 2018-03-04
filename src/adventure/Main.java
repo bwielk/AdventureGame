@@ -1,6 +1,6 @@
 package adventure;
 
-import java.util.*;
+import java.util.*; 
 import java.util.Scanner;
 
 public class Main {
@@ -26,14 +26,15 @@ public class Main {
 		locations.get(2).addExit("E", 1);
 		locations.get(2).addExit("S", 5);
 		//LUCKY_FOREST
-		locations.get(3).addExit("E", 2);
-		locations.get(3).addExit("W", 4);
+		locations.get(3).addExit("W", 2);
+		locations.get(3).addExit("E", 4);
 		locations.get(3).addExit("S", 1);
 		//HELL
 		locations.get(4).addExit("S", 5);
 		//HEAVEN
-		locations.get(5).addExit("E", 2);
+		locations.get(5).addExit("W", 2);
 		locations.get(5).addExit("N", 1);
+		
 		int loc = 1;
 		while(true){
 			System.out.println(locations.get(loc).getDescription());
@@ -41,13 +42,24 @@ public class Main {
 				break;
 			}
 			
-			loc = scanner.nextInt();
+			Map<String, Integer> exits = locations.get(loc).getExits();
+			System.out.println("Available exits for this location : ");
+			for(String exit : exits.keySet()){
+				System.out.println(exit + ",");
+			}
+			System.out.println();
+			
+			String direction = scanner.nextLine().toUpperCase();
+			if(exits.containsKey(direction)){
+				loc = exits.get(direction);
+			}else{
+				System.out.println("You cannot go in that direction");
+			}
+			
 			if(!locations.containsKey(loc)){
 				System.out.println("You cannot go in the direction");
 				break;
 			}
 		}
 	}
-	
-
 }
